@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import { BASE_API_URL } from '../utils/constants';
 import {useForm} from 'react-hook-form';
 import "./Form.css";
 import "./animate.css";
@@ -75,7 +76,7 @@ function Form() {
   });
 
   const submitRegister = () =>{
-    Axios.post("http://localhost:3001/api/register/participantes", {
+    Axios.post(`${BASE_API_URL}/api/register/participantes`, {
       estu0: est0,
       estu1: est1,
       estu2: est2,
@@ -98,7 +99,7 @@ function Form() {
   };
 
   const deleteRegister = () =>{
-    Axios.delete("http://localhost:3001/api/register/delete").then(()=>{
+    Axios.delete(`${BASE_API_URL}/api/register/delete`).then(()=>{
       console.log("Listo");
     });
   }
