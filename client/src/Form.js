@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import { BASE_API_URL } from '../utils/constants';
+import { BASE_API_URL } from './utils/constants';
 import {useForm} from 'react-hook-form';
 import "./Form.css";
 import "./animate.css";

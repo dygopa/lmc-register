@@ -1,8 +1,8 @@
 const express  = require('express');
 const mysql = require('mysql');
-const cors = require('cors');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const path = require('path');
 const app = express();
 require('dotenv').config();
 
@@ -13,10 +13,9 @@ const db = mysql.createPool({
     database: process.env.DB_NAME
 });
 
-// const buildPath = path.join(__dirname, '..', 'build');
-// app.use(express.static(buildPath));
+const buildPath = path.join(__dirname, '..', 'build');
+app.use(express.static(buildPath));
 
-app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
