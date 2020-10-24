@@ -7,7 +7,7 @@ const app = express();
 require('dotenv').config();
 
 const db = mysql.createPool({
-    host: 'p3plcpnl0546.prod.phx3.secureserver.net:2083',
+    host: 'https://p3plcpnl0546.prod.phx3.secureserver.net/',
     user: 'lmc-userdb',
     password: '$D&k!^E[{DiK',
     database: 'lmcrdb'
