@@ -68,12 +68,12 @@ app.post("/api/register/participantes", async (req, res) => {
 
     try {
         const transporter = nodemailer.createTransport({
-            host: process.env.NM_HOST,
-            port: process.env.NM_PORT,
+            host: "p3plcpnl0546.prod.phx3.secureserver.net",
+            port: "465",
             secure: true,
             auth: {
-                user: process.env.NM_USER,
-                pass: process.env.NM_PASS
+                user: "registro@lmc-inscripcion.novatec-corp.com",
+                pass: "$D&k!^E[{DiK"
             },
             tls: {
                 rejectUnauthoraized: false
