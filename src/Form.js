@@ -247,10 +247,10 @@ function Form() {
             <div className="input-group flex ">
               <label>Código de patrocinio</label>
               <input
-                onChange={(event) => setCodeT(event.target.value)}
+                // onChange={(event) => setCodeT(event.target.value)}
                 placeholder="Codigo"
               />
-              <p className="input-error">{error ? error : ""}</p>
+              {/* <p className="input-error">{error ? error : ""}</p> */}
             </div>
             <div className="input-group">
               <label>Cantidad de participantes</label>
