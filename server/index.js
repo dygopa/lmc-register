@@ -8,8 +8,8 @@ require('dotenv').config();
 
 const db = mysql.createPool({
     host: '23.229.216.193',
-    user: 'novatec2016',
-    password: 'wmendoza1411',
+    user: 'lmc-userdb',
+    password: '$D&k!^E[{DiK',
     database: 'lmcrdb'
 });
 
