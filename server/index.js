@@ -7,10 +7,10 @@ const app = express();
 require('dotenv').config();
 
 const db = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
+    host: p3plcpnl0546.prod.phx3.secureserver.net,
+    user: novatec2016,
+    password: wmendoza1411,
+    database: lmcrdb
 });
 
 const buildPath = path.join(__dirname, '..', 'build');
