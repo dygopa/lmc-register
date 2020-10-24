@@ -890,7 +890,7 @@ function Form() {
             </div>
             <div className="done-subtitle">
               <p className="done-subtitle-p">
-                Es requerido que nos sigan en nuestras redes sociales Instagram <a href="https://www.instagram.com/gmcpanama.oficial/">@gmcpanama.oficial</a> 
+                Es requerido que nos sigan en nuestras redes sociales Instagram <a href="https://www.instagram.com/gmcpanama.oficial/">@gmcpanama.oficial </a> 
                 y Facebook <a href="https://www.facebook.com/gmcpanama1">GMC Panamá</a>, ya que por allí estaremos 
                 compartiendo información de interés a los participantes.
               </p>
