@@ -7,10 +7,10 @@ const app = express();
 require('dotenv').config();
 
 const db = mysql.createPool({
-    host: 'http://novatec-corp.com/',
-    user: 'lmc-userdb',
-    password: '$D&k!^E[{DiK',
-    database: 'lmcrdb'
+    host: 'bnab7b9r9qcj1fouzyww-mysql.services.clever-cloud.com',
+    user: 'uln1autxaqhlbcej',
+    password: 'L0zqPu97dh2gtGlJmqog',
+    database: 'bnab7b9r9qcj1fouzyww'
 });
 
 const buildPath = path.join(__dirname, '..', 'build');
