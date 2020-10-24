@@ -48,8 +48,8 @@ app.post("/api/register/participantes", async (req, res) => {
         <br/>
         <ul>
             <li>Instagram: <a href="https://www.instagram.com/gmcpanama.oficial/">@gmcpanama.oficial</a></li>
-            <li>Facebook: <a> href=""</a></li>
-            <li>Linkedin: <a> href=""</a></li>
+            <li>Facebook: <a> href="https://www.facebook.com/gmcpanama1"</a>GMC Panamá</li>
+            <li>Linkedin: <a> href="http://linkedin.com/company/panamagmc"</a>GMC Panamá</li>
         </ul>
         <br/>
         <p>Por otra parte, a este mismo correo les enviaremos sus credenciales de acceso para 
