@@ -76,7 +76,7 @@ function Form() {
   });
 
   const submitRegister = () =>{
-    Axios.post(`${BASE_API_URL}/api/register/participantes`, {
+    Axios.post(`https://registerlmc.herokuapp.com/api/register/participantes`, {
       estu0: est0,
       estu1: est1,
       estu2: est2,
@@ -99,7 +99,7 @@ function Form() {
   };
 
   const deleteRegister = () =>{
-    Axios.delete(`${BASE_API_URL}/api/register/delete`).then(()=>{
+    Axios.delete(`https://registerlmc.herokuapp.com/api/register/delete`).then(()=>{
       console.log("Listo");
     });
   }
