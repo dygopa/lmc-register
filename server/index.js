@@ -7,7 +7,7 @@ const app = express();
 require('dotenv').config();
 
 const db = mysql.createPool({
-    host: '23.229.216.193',
+    host: 'p3plcpnl0546.prod.phx3.secureserver.net',
     user: 'lmc-userdb',
     password: '$D&k!^E[{DiK',
     database: 'lmcrdb'
@@ -48,8 +48,8 @@ app.post("/api/register/participantes", async (req, res) => {
         <br/>
         <ul>
             <li>Instagram: <a href="https://www.instagram.com/gmcpanama.oficial/">@gmcpanama.oficial</a></li>
-            <li>Facebook: WICHO QUE TE DIGA</li>
-            <li>Linkedin: WICHO QUE TE DIGA</li>
+            <li>Facebook: <a> href=""</a></li>
+            <li>Linkedin: <a> href=""</a></li>
         </ul>
         <br/>
         <p>Por otra parte, a este mismo correo les enviaremos sus credenciales de acceso para 
