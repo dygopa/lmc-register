@@ -35,20 +35,7 @@ p.input-error {
   color: #979797;
   transition: all 0.3s ease-in-out;
 }
-
-.alert{
-  display: block;
-  position: fixed;
-  bottom:20px;
-  left:20px;
-  width:fit-content;
-  padding:15px 30px;
-  text-align: left;
-  background-color: #7ac142;
-  color:#ffffff;
-  border-radius: 5px;
-  user-select: pointer;
-}
+ 
 
 .error {
   color: #ffa928;

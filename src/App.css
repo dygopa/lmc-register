@@ -146,53 +146,34 @@ button.lmc-button, button {
   cursor: pointer;
 }
 
-.checkmark__circle {
-  stroke-dasharray: 166;
-  stroke-dashoffset: 166;
-  stroke-width: 50px;
-  stroke-miterlimit: 10;
-  stroke: #7ac142;
-  fill: none;
-  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+.alert-container {
+  z-index: 11;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background-color: #1411117a;
+  backdrop-filter: blur(5px);
 }
 
-.checkmark {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: block;
-  stroke-width: 2px;
-  stroke: #fff;
-  stroke-miterlimit: 10;
-  margin: 0% auto;
-  box-shadow: inset 0px 0px 0px #7ac142;
-  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-}
-
-.checkmark__check {
-  transform-origin: 50% 50%;
-  stroke-dasharray: 48;
-  stroke-dashoffset: 48;
-  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-}
-
-@keyframes stroke {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes scale {
-  0%, 100% {
-    transform: none;
-  }
-  50% {
-    transform: scale3d(1.1, 1.1, 1);
-  }
-}
-@keyframes fill {
-  100% {
-    box-shadow: inset 0px 0px 0px 30px #7ac142;
-  }
+.alert-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 70%;
+  height: 75vh;
+  padding: 0% 0px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 .done-container {
@@ -215,20 +196,81 @@ button.lmc-button, button {
 }
 
 p.done-title-p {
-  font-size: 1.5rem;
+  font-size: 18.5px;
   font-weight: 700;
   color: #7ac142;
 }
 
 p.done-subtitle-p {
-  font-size: 1.1rem;
+  font-size: 14.1px;
   font-weight: 500;
   color: #4a4a4a;
 }
 
 .done-subtitle {
   display: block;
+  margin-bottom: 2%;
   position: relative;
-  width: 50%;
-  margin: 0 auto;
+  width: 80%;
+}
+
+.done-button button {
+  position: relative;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 80px;
+  background-color: #222d5f;
+  cursor: pointer;
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 50px;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2px;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 0% auto;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill 0.4s ease-in-out 0.4s forwards,
+    scale 0.3s ease-in-out 0.9s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
 }

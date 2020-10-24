@@ -42,7 +42,7 @@ app.post("/api/register/participantes", async (req, res) => {
     contentHtml = `
         <p>Bienvenidos integrantes del Equipo <b>${estu0.equipo}</b></p>
         <br/>
-        <p>Su registro se completó exitosamente. Para completar el proceso es necesario 
+        <p>Su registro se hizo exitosamente. Para completar el proceso es necesario 
         que todos los integrantes del equipo sigan nuestras redes sociales para que 
         puedan estar informados de las próximas actividades y noticias que estaremos publicando.</p>
         <br/>

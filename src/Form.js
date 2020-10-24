@@ -6,13 +6,13 @@ import "./Form.css";
 import "./animate.css";
 
 function Form() {
-  const [clickT, setClickT] = useState(0);  
-  const [times, setTimes] = useState(5);
+  // const [clickT, setClickT] = useState(0);  
+  // const [times, setTimes] = useState(5);
   const [timesC, setTimesC] = useState(0);
-  const [codeT, setCodeT] = useState("");
-  const [error, setError] = useState("");
+  // const [codeT, setCodeT] = useState("");
+  // const [error, setError] = useState("");
   const [listo, setListo] = useState(false);
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
   const [alert, setAlert] = useState(false);
   
   const {register, handleSubmit, errors} = useForm();
@@ -87,16 +87,16 @@ function Form() {
     });
     
     deleteRegister();
-    setMessage("Equipo registrado exitosamente");
+    // setMessage("Equipo registrado exitosamente");
     setAlert(true);
-    scrollTop();
+    // scrollTop();
     // cancelCourse();
-    handleClick();
+    // handleClick();
   }
   
-  const scrollTop = () =>{
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  };
+  // const scrollTop = () =>{
+  //   window.scrollTo({top: 0, behavior: 'smooth'});
+  // };
 
   const deleteRegister = () =>{
     Axios.delete(`${BASE_API_URL}/api/register/delete`).then(()=>{
@@ -104,79 +104,64 @@ function Form() {
     });
   }
 
-  useEffect(()=>{
-    if(clickT === 1 && times === 1 
-      || clickT === 2 && times === 2 
-      || clickT === 3 && times === 3 
-      || clickT === 4 && times === 4 
-      || clickT === 1 && times === 1 ){
-      setListo(true);
-    }else{
-      setListo(false);
-    }
-  },[clickT, times])
+  // useEffect(()=>{
+  //   if(clickT === 1 && times === 1 
+  //     || clickT === 2 && times === 2 
+  //     || clickT === 3 && times === 3 
+  //     || clickT === 4 && times === 4 
+  //     || clickT === 1 && times === 1 ){
+  //     setListo(true);
+  //   }else{
+  //     setListo(false);
+  //   }
+  // },[clickT, times])
 
-  useEffect(() => {
-    const codes = {
-      code1: "aaa",
-      code2: "bbb",
-      code3: "ccc"
-    };
-    if (codeT === codes.code1) {
-      setTimes(3);
-      setError("");
-    } else if (codeT === codes.code2) {
-      setTimes(4);
-      setError("");
-    } else if (codeT === codes.code3) {
-      setTimes(5);
-      setError("");
-    } else if (codeT === "") {
-      setTimes(5);
-      setError("");
-    } else if (
-      codeT !== codes.code1 ||
-      codeT !== codes.code2 ||
-      codeT !== codes.code3
-    ) {
-      setError("Código no válido");
-    }
-  }, [codeT]);
+  // useEffect(() => {
+  //   const codes = {
+  //     code1: "aaa",
+  //     code2: "bbb",
+  //     code3: "ccc"
+  //   };
+  //   if (codeT === codes.code1) {
+  //     setTimes(3);
+  //     setError("");
+  //   } else if (codeT === codes.code2) {
+  //     setTimes(4);
+  //     setError("");
+  //   } else if (codeT === codes.code3) {
+  //     setTimes(5);
+  //     setError("");
+  //   } else if (codeT === "") {
+  //     setTimes(5);
+  //     setError("");
+  //   } else if (
+  //     codeT !== codes.code1 ||
+  //     codeT !== codes.code2 ||
+  //     codeT !== codes.code3
+  //   ) {
+  //     setError("Código no válido");
+  //   }
+  // }, [codeT]);
 
-  // const cancelCourse = () => {
-  //   document.getElementById("react-form").reset();
+  // const handleClick = () => {
+  //   setClickT(clickT + 1);
   // };
-
-  const handleClick = () => {
-    setClickT(clickT + 1);
-  };
 
   return (
     <div className="form-lmc">
       {listo ? (
         <div className="done-container">
           <div className="done-wrapper">
-            <div className="done-icon">
-              <svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-              </svg>
-            </div>
-            <div className="done-title">
-              <p className="done-title-p animate__animated animate__fadeInDown">
-                Equipos registrados exitosamente
-              </p>
-            </div>
-            <div className="done-subtitle">
-              <p className="done-subtitle-p animate__animated animate__fadeInUp">
-                Su registro de equipos fue exitoso. Pronto recibirá un correo de confirmación 
-              </p>
+            <div className="done-button">
+              <button onClick={() => {setListo(true); setAlert(false)}}>
+                Continuar para registrar tu equípo
+              </button>
             </div>
           </div>
         </div>
       ) : (
         <div>
-          {error ? (
+          {/* {error ? (
             <span></span>
           ) : (
             <div className="animate__animated animate__fadeInDown check-counter-div">
@@ -193,8 +178,8 @@ function Form() {
                 </span>
               ))}
             </div>
-          )}
-            <div className="flex">
+          )} */}
+          <div className="flex">
             <div className="input-group active">
               <label>País</label>
               <select
@@ -240,7 +225,7 @@ function Form() {
                 Este campo es obligatorio</p>}
             </div>
             </div>
-            <div className="flex justify-between">
+          <div className="flex justify-between">
             <div className="input-group active">
               <label>Nombre del equipo</label>
               <input
@@ -282,7 +267,7 @@ function Form() {
                 Este campo es obligatorio</p>}
             </div>
           </div>
-            <div id="react-form">
+          <div id="react-form">
 
             <div className="active form-group parti-container">
               <div className="parti-header">
@@ -882,20 +867,47 @@ function Form() {
               </button>
             </div>
           </div>
-          { alert ?
-            <div
-              className="alert animate__animated animate__fadeInLeft"
-              onClick={() => {
-                setAlert(false);
-              }}
-            >
-              {message}
-            </div>
-            :
-            <div></div>
-          }
         </div>
       )}
+      { alert &&
+        <div className="alert-container animate__animated animate__fadeIn">
+          <div className="alert-wrapper">
+            <div className="done-icon">
+              <svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+              </svg>
+            </div>
+            <div className="done-title">
+              <p className="done-title-p">
+                El equipo se registro exitosamente
+              </p>
+            </div>
+            <div className="done-subtitle">
+              <p className="done-subtitle-p">
+                Recibirán un correo de confirmación y posteriormente recibirán un correo con el enlace y los accesos para acceder al Latam Management Challenge.
+              </p>
+            </div>
+            <div className="done-subtitle">
+              <p className="done-subtitle-p">
+                Es requerido que nos sigan en nuestras redes sociales Instagram <a href="https://www.instagram.com/gmcpanama.oficial/">@gmcpanama.oficial</a> 
+                y Facebook <a href="https://www.facebook.com/gmcpanama1">GMC Panamá</a>, ya que por allí estaremos 
+                compartiendo información de interés a los participantes.
+              </p>
+            </div>
+            <div className="done-subtitle">
+              <p className="done-subtitle-p">
+                Gracias por aceptar el reto
+              </p>
+            </div>
+            <div className="done-button">
+              <button onClick={() => {setListo(true); setAlert(false)}}>
+                Continuar
+              </button>
+            </div>
+          </div>
+        </div>
+      }
     </div>
   );
 }
