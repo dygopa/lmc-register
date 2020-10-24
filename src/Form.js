@@ -153,7 +153,7 @@ function Form() {
         <div className="done-container">
           <div className="done-wrapper">
             <div className="done-button">
-              <button onClick={() => {setListo(true); setAlert(false)}}>
+              <button onClick={() => {setListo(false); setAlert(false)}}>
                 Continuar para registrar tu equípo
               </button>
             </div>
