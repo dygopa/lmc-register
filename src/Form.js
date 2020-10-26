@@ -87,65 +87,14 @@ function Form() {
     });
     
     deleteRegister();
-    // setMessage("Equipo registrado exitosamente");
     setAlert(true);
-    // scrollTop();
-    // cancelCourse();
-    // handleClick();
   }
-  
-  // const scrollTop = () =>{
-  //   window.scrollTo({top: 0, behavior: 'smooth'});
-  // };
 
   const deleteRegister = () =>{
     Axios.delete(`${BASE_API_URL}/api/register/delete`).then(()=>{
       console.log("Listo");
     });
   }
-
-  // useEffect(()=>{
-  //   if(clickT === 1 && times === 1 
-  //     || clickT === 2 && times === 2 
-  //     || clickT === 3 && times === 3 
-  //     || clickT === 4 && times === 4 
-  //     || clickT === 1 && times === 1 ){
-  //     setListo(true);
-  //   }else{
-  //     setListo(false);
-  //   }
-  // },[clickT, times])
-
-  // useEffect(() => {
-  //   const codes = {
-  //     code1: "aaa",
-  //     code2: "bbb",
-  //     code3: "ccc"
-  //   };
-  //   if (codeT === codes.code1) {
-  //     setTimes(3);
-  //     setError("");
-  //   } else if (codeT === codes.code2) {
-  //     setTimes(4);
-  //     setError("");
-  //   } else if (codeT === codes.code3) {
-  //     setTimes(5);
-  //     setError("");
-  //   } else if (codeT === "") {
-  //     setTimes(5);
-  //     setError("");
-  //   } else if (
-  //     codeT !== codes.code1 ||
-  //     codeT !== codes.code2 ||
-  //     codeT !== codes.code3
-  //   ) {
-  //     setError("Código no válido");
-  //   }
-  // }, [codeT]);
-
-  // const handleClick = () => {
-  //   setClickT(clickT + 1);
-  // };
 
   return (
     <div className="form-lmc">
@@ -161,24 +110,6 @@ function Form() {
         </div>
       ) : (
         <div>
-          {/* {error ? (
-            <span></span>
-          ) : (
-            <div className="animate__animated animate__fadeInDown check-counter-div">
-              <div className="flex justify-center">
-                <p className="subtitle-p-lmc">Equipos disponibles por registrar</p>
-              </div>
-              {Array.from({ length: times }, (_, i) => (
-                <span
-                  className={
-                    i <= clickT ? "act check-counter" : "check-counter"
-                  }
-                  key={i}>
-                  {i + 1}
-                </span>
-              ))}
-            </div>
-          )} */}
           <div className="flex">
             <div className="input-group active">
               <label>País</label>
@@ -249,8 +180,11 @@ function Form() {
               <input
                 // onChange={(event) => setCodeT(event.target.value)}
                 placeholder="Codigo"
+                name="codigo"
               />
-              {/* <p className="input-error">{error ? error : ""}</p> */}
+              {errors.codigo && <p className="input-error">
+              <i class="fas fa-exclamation-triangle"></i>
+              Este campo es obligatorio</p>}
             </div>
             <div className="input-group">
               <label>Cantidad de participantes</label>
