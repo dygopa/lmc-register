@@ -6,16 +6,15 @@ import "./Form.css";
 import "./animate.css";
 
 function Form() {
-  // const [clickT, setClickT] = useState(0);  
-  // const [times, setTimes] = useState(5);
+
   const [timesC, setTimesC] = useState(0);
-  // const [codeT, setCodeT] = useState("");
-  // const [error, setError] = useState("");
+  const [code, setCode] = useState("");
   const [listo, setListo] = useState(false);
-  // const [message, setMessage] = useState("");
   const [alert, setAlert] = useState(false);
   
   const {register, handleSubmit, errors} = useForm();
+  const [errorM, errorMessage] = useState(false);
+  const [message, setMessage] = useState("");
   
   //Estudiantes
   const [est0, setEst0] = useState({
@@ -75,23 +74,33 @@ function Form() {
     carrera: ""
   });
 
-  const submitRegister = () =>{
-    Axios.post(`${BASE_API_URL}/api/register/participantes`, {
+  const submitRegister = async () =>{
+    await Axios.post(`${BASE_API_URL}/api/register/participantes`, {
       estu0: est0,
       estu1: est1,
       estu2: est2,
       estu3: est3,
-      estu4: est4
-    }).then(()=>{
-      console.log("Listo");
+      estu4: est4,
+      codigo: code
+    }).then( res =>{
+      if(res.data.message){
+        setMessage(res.data.message);
+        errorMessage(true);
+        deleteRegister();
+        window.scrollTo({top: 0, behavior: 'smooth'})
+        setAlert(false);
+      }
+      
+      if(res.data.message === "succcess"){
+        errorMessage(false);
+        setAlert(true);
+        deleteRegister();
+      }
     });
-    
-    deleteRegister();
-    setAlert(true);
   }
 
-  const deleteRegister = () =>{
-    Axios.delete(`${BASE_API_URL}/api/register/delete`).then(()=>{
+  const deleteRegister = async () =>{
+    await Axios.delete(`${BASE_API_URL}/api/register/delete`).then(()=>{
       console.log("Listo");
     });
   }
@@ -178,13 +187,24 @@ function Form() {
             <div className="input-group flex ">
               <label>Código de patrocinio</label>
               <input
-                // onChange={(event) => setCodeT(event.target.value)}
-                placeholder="Codigo"
+                onChange={(e) => setCode(e.target.value)}
+                placeholder="Código"
+                id="codigo"
                 name="codigo"
+                ref={register ({
+                  required: true
+                }
+                )}
               />
               {errors.codigo && <p className="input-error">
               <i class="fas fa-exclamation-triangle"></i>
-              Este campo es obligatorio</p>}
+              Este campo es requerido</p>}
+              {errorM 
+              &&
+              <p className="input-error">
+              <i class="fas fa-exclamation-triangle"></i>
+              {message}</p>
+              }
             </div>
             <div className="input-group">
               <label>Cantidad de participantes</label>
@@ -207,7 +227,7 @@ function Form() {
               <div className="parti-header">
                 <div className="flex justify-center"> 
                   <i className="fas fa-address-card"></i>
-                  <span>Lider</span>
+                  <span>Líder</span>
                 </div>
               </div>
               <div className="parti-body">
@@ -835,7 +855,10 @@ function Form() {
               </p>
             </div>
             <div className="done-button">
-              <button onClick={() => {setListo(true); setAlert(false)}}>
+              <button onClick={() => {
+                setAlert(false); 
+                setListo(true);
+                }}>
                 Continuar
               </button>
             </div>
