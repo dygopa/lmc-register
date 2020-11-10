@@ -134,6 +134,7 @@ function Form() {
                 <option value="">Seleccionar...</option>
                 <option value="Republica Domicana">Republica Domicana</option>
                 <option value="Paraguay">Paraguay</option>
+                <option value="Bolivia">Bolivia</option>
                 <option value="Uruguay">Uruguay</option>
                 <option value="Venezuela">Venezuela</option>
                 <option value="Guatemala">Guatemala</option>
